@@ -9,7 +9,7 @@ class window.App extends Backbone.Model
 
 
   nextRound: ->
-    @usedCards = _.extends(@usedCards, @get('playerHand'), @get('dealerHand'))
+   # @usedCards = _.extends(@usedCards, @get('playerHand'), @get('dealerHand'))
     @set 'playerHand', @get('deck').dealPlayer()
     @set 'dealerHand', @get('deck').dealDealer()
     console.dir(@usedCards)
@@ -17,6 +17,6 @@ class window.App extends Backbone.Model
   scores:
     playerChips: 1000
 
-  usedCards: {}
+  #usedCards: {}
 
 # fix next round
