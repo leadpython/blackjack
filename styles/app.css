@@ -17,3 +17,18 @@
 .hand {
   overflow: auto;
 }
+
+body {
+  display: inline-block;
+  text-align: center;
+  background-color: #006600;
+  color: white;
+}
+
+.nextRound {
+  display: none;
+}
+
+.winner {
+  font-size: 100px;
+}

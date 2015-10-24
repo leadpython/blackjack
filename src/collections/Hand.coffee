@@ -10,7 +10,7 @@ class window.Hand extends Backbone.Collection
     @last()
     if @isDealer == undefined
       if @compare() > 21
-        alert("DEALER WINS!")
+        console.log("DEALER WINS!")
 
   stand: (playerHand) ->
     if @hasTurnedOver == false
@@ -23,18 +23,21 @@ class window.Hand extends Backbone.Collection
     
 
     if dealerScore > playerScore and dealerScore > 17
-      alert("DEALER WINS!")
+      $(".winner").text("DEALER WINS!")
+      console.log("DEALER WINS!")
       # trigger game end
     else
       while dealerScore < 17
         @hit()
         dealerScore = @compare()
       if dealerScore >= 17 and dealerScore <= 21 and dealerScore > playerScore
-        alert("DEALER WINS!")
+        $(".winner").text("DEALER WINS!")
       else if dealerScore == playerScore
-        alert("PUSH!")
+        $(".winner").text("PUSH!")
+        console.log("PUSH!")
       else
-        alert("PLAYER WINS!")
+        $(".winner").text("PLAYER WINS!")
+        console.log("PLAYER WINS!")
 
   compare: ->
     if Math.max(@scores()[0], @scores()[1]) > 21
